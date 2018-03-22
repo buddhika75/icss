@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FeedbackEditDlg" widgetVar="FeedbackEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFeedbackTitle}">
+            <h:form id="FeedbackEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{feedbackController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{feedbackController.selected.id}" title="#{bundle.EditFeedbackTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_position}" for="position" />
+                        <p:inputText id="position" value="#{feedbackController.selected.position}" title="#{bundle.EditFeedbackTitle_position}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_gender}" for="gender" />
+                        <p:inputText id="gender" value="#{feedbackController.selected.gender}" title="#{bundle.EditFeedbackTitle_gender}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_age}" for="age" />
+                        <p:inputText id="age" value="#{feedbackController.selected.age}" title="#{bundle.EditFeedbackTitle_age}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_service_Period}" for="service_Period" />
+                        <p:inputText id="service_Period" value="#{feedbackController.selected.service_Period}" title="#{bundle.EditFeedbackTitle_service_Period}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_institution_Service_Period}" for="institution_Service_Period" />
+                        <p:inputText id="institution_Service_Period" value="#{feedbackController.selected.institution_Service_Period}" title="#{bundle.EditFeedbackTitle_institution_Service_Period}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_place}" for="place" />
+                        <p:inputText id="place" value="#{feedbackController.selected.place}" title="#{bundle.EditFeedbackTitle_place}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_increments}" for="increments" />
+                        <p:inputText id="increments" value="#{feedbackController.selected.increments}" title="#{bundle.EditFeedbackTitle_increments}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_environment}" for="environment" />
+                        <p:inputText id="environment" value="#{feedbackController.selected.environment}" title="#{bundle.EditFeedbackTitle_environment}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_cleanliness}" for="cleanliness" />
+                        <p:inputText id="cleanliness" value="#{feedbackController.selected.cleanliness}" title="#{bundle.EditFeedbackTitle_cleanliness}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_arrangement}" for="arrangement" />
+                        <p:inputText id="arrangement" value="#{feedbackController.selected.arrangement}" title="#{bundle.EditFeedbackTitle_arrangement}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_groupWork}" for="groupWork" />
+                        <p:inputText id="groupWork" value="#{feedbackController.selected.groupWork}" title="#{bundle.EditFeedbackTitle_groupWork}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_leadership}" for="leadership" />
+                        <p:inputText id="leadership" value="#{feedbackController.selected.leadership}" title="#{bundle.EditFeedbackTitle_leadership}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_training}" for="training" />
+                        <p:inputText id="training" value="#{feedbackController.selected.training}" title="#{bundle.EditFeedbackTitle_training}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_evaluation}" for="evaluation" />
+                        <p:inputText id="evaluation" value="#{feedbackController.selected.evaluation}" title="#{bundle.EditFeedbackTitle_evaluation}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_welfare}" for="welfare" />
+                        <p:inputText id="welfare" value="#{feedbackController.selected.welfare}" title="#{bundle.EditFeedbackTitle_welfare}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_discipline}" for="discipline" />
+                        <p:inputText id="discipline" value="#{feedbackController.selected.discipline}" title="#{bundle.EditFeedbackTitle_discipline}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_communication}" for="communication" />
+                        <p:inputText id="communication" value="#{feedbackController.selected.communication}" title="#{bundle.EditFeedbackTitle_communication}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_discussions}" for="discussions" />
+                        <p:inputText id="discussions" value="#{feedbackController.selected.discussions}" title="#{bundle.EditFeedbackTitle_discussions}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_requirementIdentification}" for="requirementIdentification" />
+                        <p:inputText id="requirementIdentification" value="#{feedbackController.selected.requirementIdentification}" title="#{bundle.EditFeedbackTitle_requirementIdentification}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_qualityService}" for="qualityService" />
+                        <p:inputText id="qualityService" value="#{feedbackController.selected.qualityService}" title="#{bundle.EditFeedbackTitle_qualityService}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_expectationAchievement}" for="expectationAchievement" />
+                        <p:inputText id="expectationAchievement" value="#{feedbackController.selected.expectationAchievement}" title="#{bundle.EditFeedbackTitle_expectationAchievement}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_suggestions}" for="suggestions" />
+                        <p:inputTextarea rows="4" cols="30" id="suggestions" value="#{feedbackController.selected.suggestions}" title="#{bundle.EditFeedbackTitle_suggestions}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_expectingFacilities}" for="expectingFacilities" />
+                        <p:inputTextarea rows="4" cols="30" id="expectingFacilities" value="#{feedbackController.selected.expectingFacilities}" title="#{bundle.EditFeedbackTitle_expectingFacilities}" />
+                        <p:outputLabel value="#{bundle.EditFeedbackLabel_feedbackDate}" for="feedbackDate" />
+                        <p:calendar id="feedbackDate" pattern="MM/dd/yyyy" value="#{feedbackController.selected.feedbackDate}" title="#{bundle.EditFeedbackTitle_feedbackDate}"  showOn="button"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{feedbackController.update}" value="#{bundle.Save}" update="display,:FeedbackListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FeedbackEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FeedbackEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FeedbackViewDlg" widgetVar="FeedbackViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFeedbackTitle}">
+            <h:form id="FeedbackViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{feedbackController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_id}"/>
+                        <h:outputText value="#{feedbackController.selected.id}" title="#{bundle.ViewFeedbackTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_position}"/>
+                        <h:outputText value="#{feedbackController.selected.position}" title="#{bundle.ViewFeedbackTitle_position}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_gender}"/>
+                        <h:outputText value="#{feedbackController.selected.gender}" title="#{bundle.ViewFeedbackTitle_gender}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_age}"/>
+                        <h:outputText value="#{feedbackController.selected.age}" title="#{bundle.ViewFeedbackTitle_age}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_service_Period}"/>
+                        <h:outputText value="#{feedbackController.selected.service_Period}" title="#{bundle.ViewFeedbackTitle_service_Period}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_institution_Service_Period}"/>
+                        <h:outputText value="#{feedbackController.selected.institution_Service_Period}" title="#{bundle.ViewFeedbackTitle_institution_Service_Period}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_place}"/>
+                        <h:outputText value="#{feedbackController.selected.place}" title="#{bundle.ViewFeedbackTitle_place}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_increments}"/>
+                        <h:outputText value="#{feedbackController.selected.increments}" title="#{bundle.ViewFeedbackTitle_increments}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_environment}"/>
+                        <h:outputText value="#{feedbackController.selected.environment}" title="#{bundle.ViewFeedbackTitle_environment}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_cleanliness}"/>
+                        <h:outputText value="#{feedbackController.selected.cleanliness}" title="#{bundle.ViewFeedbackTitle_cleanliness}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_arrangement}"/>
+                        <h:outputText value="#{feedbackController.selected.arrangement}" title="#{bundle.ViewFeedbackTitle_arrangement}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_groupWork}"/>
+                        <h:outputText value="#{feedbackController.selected.groupWork}" title="#{bundle.ViewFeedbackTitle_groupWork}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_leadership}"/>
+                        <h:outputText value="#{feedbackController.selected.leadership}" title="#{bundle.ViewFeedbackTitle_leadership}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_training}"/>
+                        <h:outputText value="#{feedbackController.selected.training}" title="#{bundle.ViewFeedbackTitle_training}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_evaluation}"/>
+                        <h:outputText value="#{feedbackController.selected.evaluation}" title="#{bundle.ViewFeedbackTitle_evaluation}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_welfare}"/>
+                        <h:outputText value="#{feedbackController.selected.welfare}" title="#{bundle.ViewFeedbackTitle_welfare}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_discipline}"/>
+                        <h:outputText value="#{feedbackController.selected.discipline}" title="#{bundle.ViewFeedbackTitle_discipline}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_communication}"/>
+                        <h:outputText value="#{feedbackController.selected.communication}" title="#{bundle.ViewFeedbackTitle_communication}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_discussions}"/>
+                        <h:outputText value="#{feedbackController.selected.discussions}" title="#{bundle.ViewFeedbackTitle_discussions}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_requirementIdentification}"/>
+                        <h:outputText value="#{feedbackController.selected.requirementIdentification}" title="#{bundle.ViewFeedbackTitle_requirementIdentification}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_qualityService}"/>
+                        <h:outputText value="#{feedbackController.selected.qualityService}" title="#{bundle.ViewFeedbackTitle_qualityService}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_expectationAchievement}"/>
+                        <h:outputText value="#{feedbackController.selected.expectationAchievement}" title="#{bundle.ViewFeedbackTitle_expectationAchievement}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_suggestions}"/>
+                        <h:outputText value="#{feedbackController.selected.suggestions}" title="#{bundle.ViewFeedbackTitle_suggestions}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_expectingFacilities}"/>
+                        <h:outputText value="#{feedbackController.selected.expectingFacilities}" title="#{bundle.ViewFeedbackTitle_expectingFacilities}"/>
+                        <h:outputText value="#{bundle.ViewFeedbackLabel_feedbackDate}"/>
+                        <h:outputText value="#{feedbackController.selected.feedbackDate}" title="#{bundle.ViewFeedbackTitle_feedbackDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FeedbackViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
