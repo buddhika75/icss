@@ -11,57 +11,162 @@
         <p:dialog id="FeedbackCreateDlg" widgetVar="FeedbackCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateFeedbackTitle}">
             <h:form id="FeedbackCreateForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{feedbackController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateFeedbackLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{feedbackController.selected.id}" title="#{bundle.CreateFeedbackTitle_id}" />
+                    <p:panelGrid columns="6" rendered="#{feedbackController.selected != null}">
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_position}" for="position" />
                         <p:inputText id="position" value="#{feedbackController.selected.position}" title="#{bundle.CreateFeedbackTitle_position}" />
-                        <p:outputLabel value="#{bundle.CreateFeedbackLabel_gender}" for="gender" />
-                        <p:inputText id="gender" value="#{feedbackController.selected.gender}" title="#{bundle.CreateFeedbackTitle_gender}" />
+
+                        <p:spacer ></p:spacer>
+
+                        <p:outputLabel value="#{bundle.CreateFeedbackLabel_gender}"  />
+                        <p:selectOneMenu id="gender" value="#{feedbackController.selected.gender}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.genders}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_age}" for="age" />
                         <p:inputText id="age" value="#{feedbackController.selected.age}" title="#{bundle.CreateFeedbackTitle_age}" />
+                        <p:spacer ></p:spacer>
+
+
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_service_Period}" for="service_Period" />
                         <p:inputText id="service_Period" value="#{feedbackController.selected.service_Period}" title="#{bundle.CreateFeedbackTitle_service_Period}" />
+                        <p:spacer ></p:spacer>
+
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_institution_Service_Period}" for="institution_Service_Period" />
                         <p:inputText id="institution_Service_Period" value="#{feedbackController.selected.institution_Service_Period}" title="#{bundle.CreateFeedbackTitle_institution_Service_Period}" />
+                        <p:spacer ></p:spacer>
+
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_place}" for="place" />
-                        <p:inputText id="place" value="#{feedbackController.selected.place}" title="#{bundle.CreateFeedbackTitle_place}" />
+                        <p:selectOneMenu id="place" value="#{feedbackController.selected.place}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.places}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_increments}" for="increments" />
-                        <p:inputText id="increments" value="#{feedbackController.selected.increments}" title="#{bundle.CreateFeedbackTitle_increments}" />
+                        <p:selectOneMenu id="increments" value="#{feedbackController.selected.increments}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_environment}" for="environment" />
-                        <p:inputText id="environment" value="#{feedbackController.selected.environment}" title="#{bundle.CreateFeedbackTitle_environment}" />
+                        <p:selectOneMenu id="environment" value="#{feedbackController.selected.environment}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_cleanliness}" for="cleanliness" />
-                        <p:inputText id="cleanliness" value="#{feedbackController.selected.cleanliness}" title="#{bundle.CreateFeedbackTitle_cleanliness}" />
+                        <p:selectOneMenu id="cleanliness" value="#{feedbackController.selected.cleanliness}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_arrangement}" for="arrangement" />
-                        <p:inputText id="arrangement" value="#{feedbackController.selected.arrangement}" title="#{bundle.CreateFeedbackTitle_arrangement}" />
+                        <p:selectOneMenu id="arrangement" value="#{feedbackController.selected.arrangement}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_groupWork}" for="groupWork" />
-                        <p:inputText id="groupWork" value="#{feedbackController.selected.groupWork}" title="#{bundle.CreateFeedbackTitle_groupWork}" />
+                        <p:selectOneMenu id="groupWork" value="#{feedbackController.selected.groupWork}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_leadership}" for="leadership" />
-                        <p:inputText id="leadership" value="#{feedbackController.selected.leadership}" title="#{bundle.CreateFeedbackTitle_leadership}" />
+                        <p:selectOneMenu id="leadership" value="#{feedbackController.selected.leadership}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_training}" for="training" />
-                        <p:inputText id="training" value="#{feedbackController.selected.training}" title="#{bundle.CreateFeedbackTitle_training}" />
+                        <p:selectOneMenu id="training" value="#{feedbackController.selected.training}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_evaluation}" for="evaluation" />
-                        <p:inputText id="evaluation" value="#{feedbackController.selected.evaluation}" title="#{bundle.CreateFeedbackTitle_evaluation}" />
+                        <p:selectOneMenu id="evaluation" value="#{feedbackController.selected.evaluation}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_welfare}" for="welfare" />
-                        <p:inputText id="welfare" value="#{feedbackController.selected.welfare}" title="#{bundle.CreateFeedbackTitle_welfare}" />
+                        <p:selectOneMenu id="gender" value="#{feedbackController.selected.welfare}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.welfare}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_discipline}" for="discipline" />
-                        <p:inputText id="discipline" value="#{feedbackController.selected.discipline}" title="#{bundle.CreateFeedbackTitle_discipline}" />
+                        <p:selectOneMenu id="discipline" value="#{feedbackController.selected.discipline}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_communication}" for="communication" />
-                        <p:inputText id="communication" value="#{feedbackController.selected.communication}" title="#{bundle.CreateFeedbackTitle_communication}" />
+                        <p:selectOneMenu id="communication" value="#{feedbackController.selected.communication}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_discussions}" for="discussions" />
-                        <p:inputText id="discussions" value="#{feedbackController.selected.discussions}" title="#{bundle.CreateFeedbackTitle_discussions}" />
+                        <p:selectOneMenu id="discussions" value="#{feedbackController.selected.discussions}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_requirementIdentification}" for="requirementIdentification" />
-                        <p:inputText id="requirementIdentification" value="#{feedbackController.selected.requirementIdentification}" title="#{bundle.CreateFeedbackTitle_requirementIdentification}" />
+                        <p:selectOneMenu id="requirementIdentification" value="#{feedbackController.selected.requirementIdentification}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_qualityService}" for="qualityService" />
-                        <p:inputText id="qualityService" value="#{feedbackController.selected.qualityService}" title="#{bundle.CreateFeedbackTitle_qualityService}" />
+                        <p:selectOneMenu id="qualityService" value="#{feedbackController.selected.qualityService}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_expectationAchievement}" for="expectationAchievement" />
-                        <p:inputText id="expectationAchievement" value="#{feedbackController.selected.expectationAchievement}" title="#{bundle.CreateFeedbackTitle_expectationAchievement}" />
+                        <p:selectOneMenu id="expectationAchievement" value="#{feedbackController.selected.expectationAchievement}" >
+                            <f:selectItem itemLabel="Select" ></f:selectItem>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
+                        </p:selectOneMenu>
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_suggestions}" for="suggestions" />
                         <p:inputTextarea rows="4" cols="30" id="suggestions" value="#{feedbackController.selected.suggestions}" title="#{bundle.CreateFeedbackTitle_suggestions}" />
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_expectingFacilities}" for="expectingFacilities" />
                         <p:inputTextarea rows="4" cols="30" id="expectingFacilities" value="#{feedbackController.selected.expectingFacilities}" title="#{bundle.CreateFeedbackTitle_expectingFacilities}" />
+                        <p:spacer ></p:spacer>
+
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_feedbackDate}" for="feedbackDate" />
                         <p:calendar id="feedbackDate" pattern="MM/dd/yyyy" value="#{feedbackController.selected.feedbackDate}" title="#{bundle.EditFeedbackTitle_feedbackDate}"  showOn="button"/>
+                        <p:spacer ></p:spacer>
+
                     </p:panelGrid>
                     <p:commandButton actionListener="#{feedbackController.create}" value="#{bundle.Save}" update="display,:FeedbackListForm:datalist,:growl" oncomplete="handleSubmit(args,'FeedbackCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="FeedbackCreateDialog.hide()"/>
