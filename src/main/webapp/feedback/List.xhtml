@@ -26,12 +26,19 @@
                                  paginator="true"
                                  rowKey="#{item.id}"
                                  rows="10"
+                                 rowIndexVar="n"
                                  rowsPerPageTemplate="10,20,30,40,50"
                                  >
 
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
+                         <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="No"/>
+                            </f:facet>
+                            <h:outputText value="#{n + 1}"/>
+                        </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFeedbackTitle_position}"/>
@@ -168,7 +175,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFeedbackTitle_expectingFacilities}"/>
                             </f:facet>
-                            <h:outputText value="#{item.expectingFacilities}"/>
+                            <h:outputText value="#{item.expectingFacilitiesNew}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

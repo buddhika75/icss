@@ -106,9 +106,9 @@
                         <p:spacer ></p:spacer>
 
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_welfare}" for="welfare" />
-                        <p:selectOneMenu id="gender" value="#{feedbackController.selected.welfare}" >
+                        <p:selectOneMenu id="welfare" value="#{feedbackController.selected.welfare}" >
                             <f:selectItem itemLabel="Select" ></f:selectItem>
-                            <f:selectItems value="#{enumController.welfare}" ></f:selectItems>
+                            <f:selectItems value="#{enumController.likerts}" ></f:selectItems>
                         </p:selectOneMenu>
                         <p:spacer ></p:spacer>
 
@@ -160,7 +160,7 @@
                         <p:spacer ></p:spacer>
 
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_expectingFacilities}" for="expectingFacilities" />
-                        <p:inputTextarea rows="4" cols="30" id="expectingFacilities" value="#{feedbackController.selected.expectingFacilities}" title="#{bundle.CreateFeedbackTitle_expectingFacilities}" />
+                        <p:inputTextarea rows="4" cols="30" id="expectingFacilities" value="#{feedbackController.selected.expectingFacilitiesNew}" title="#{bundle.CreateFeedbackTitle_expectingFacilities}" />
                         <p:spacer ></p:spacer>
 
                         <p:outputLabel value="#{bundle.CreateFeedbackLabel_feedbackDate}" for="feedbackDate" />

@@ -50,7 +50,8 @@ public class Feedback implements Serializable {
     @Lob
     String suggestions;
     @Lob
-    Likert expectingFacilities;
+    String expectingFacilitiesNew;
+    
 
     @Temporal(javax.persistence.TemporalType.DATE)
     Date feedbackDate;
@@ -239,12 +240,12 @@ public class Feedback implements Serializable {
         this.suggestions = suggestions;
     }
 
-    public Likert getExpectingFacilities() {
-        return expectingFacilities;
+    public String getExpectingFacilitiesNew() {
+        return expectingFacilitiesNew;
     }
 
-    public void setExpectingFacilities(Likert expectingFacilities) {
-        this.expectingFacilities = expectingFacilities;
+    public void setExpectingFacilitiesNew(String expectingFacilitiesNew) {
+        this.expectingFacilitiesNew = expectingFacilitiesNew;
     }
 
     public Date getFeedbackDate() {
